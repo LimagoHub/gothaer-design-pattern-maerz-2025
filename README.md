@@ -1,0 +1,1 @@
+# gothaer-design-pattern-maerz-2025
