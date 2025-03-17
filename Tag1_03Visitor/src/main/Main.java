@@ -5,6 +5,7 @@ import mitarbeiter.GehaltsEmpfaenger;
 import mitarbeiter.LohnEmpfaenger;
 import mitarbeiter.visitor.PrintVisitor;
 import mitarbeiter.visitor.ResetArbeitszeitVisitor;
+import mitarbeiter.visitor.StatistikVisitor;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,5 +22,8 @@ public class Main {
         firma.iterate(new PrintVisitor());
         firma.iterate(new ResetArbeitszeitVisitor());
         firma.iterate(new PrintVisitor());
+
+        firma.iterate(new StatistikVisitor());
+
     }
 }
