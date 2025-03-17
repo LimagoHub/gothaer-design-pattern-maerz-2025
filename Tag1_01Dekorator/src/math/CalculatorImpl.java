@@ -2,6 +2,8 @@ package math;
 
 public class CalculatorImpl implements Calculator {
 
+    protected CalculatorImpl() {}
+
     @Override
     public double add(double a, double b){
 
