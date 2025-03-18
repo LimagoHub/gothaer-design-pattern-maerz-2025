@@ -1,4 +1,6 @@
 package tiere;
 
-public interface SchweineMemento {
+import java.io.Serializable;
+
+public interface SchweineMemento extends Serializable {
 }

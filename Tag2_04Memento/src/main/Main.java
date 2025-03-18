@@ -6,6 +6,7 @@ import tiere.SchweineMemento;
 public class Main {
     public static void main(String[] args) {
 
+        Schwein babe = new Schwein("Babe");
         Schwein piggy = new Schwein("Miss Piggy");
         System.out.println(piggy);
 
@@ -17,5 +18,7 @@ public class Main {
 
         piggy.setMemento(m);
         System.out.println(piggy);
+
+        SchweineMemento mVonBabe = babe.getMemento();
     }
 }
