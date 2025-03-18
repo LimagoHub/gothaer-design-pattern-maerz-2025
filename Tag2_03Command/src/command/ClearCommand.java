@@ -2,23 +2,13 @@ package command;
 
 import math.Calculator;
 
-public class ClearCommand extends AbstractCommand {
+public class ClearCommand extends AbstractTransactionCommand {
 
-    private double oldValue;
 
-    @Override
-    public boolean isUndoable() {
-        return true;
-    }
 
     @Override
-    public void undo() {
-        Calculator.getInstance().setMemory(oldValue);
-    }
+    public void doAction() {
 
-    @Override
-    public void execute() {
-        this.oldValue = Calculator.getInstance().getMemory();
         Calculator.getInstance().clear();
     }
 }
