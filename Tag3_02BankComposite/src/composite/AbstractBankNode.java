@@ -1,5 +1,8 @@
 package composite;
 
+import composite.visitor.AbstractBankVisitor;
+import composite.visitor.BankVisitor;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -57,6 +60,21 @@ public abstract class AbstractBankNode implements Iterable<AbstractBankNode> {
     @Override
     public Iterator<AbstractBankNode> iterator() {
         final List<AbstractBankNode> liste = new ArrayList<AbstractBankNode>();
+        populateIteratorWithNodes(liste);
         return liste.iterator();
+    }
+
+    private void populateIteratorWithNodes(final List<AbstractBankNode> liste) {
+        liste.add(this);
+        for(var child: getChildren()) {
+            child.populateIteratorWithNodes(liste);
+        }
+    }
+
+    public abstract void accept(BankVisitor visitor);
+    public void iterate(final BankVisitor visitor) {
+        visitor.init();
+        forEach(node->node.accept(visitor));
+        visitor.dispose();
     }
 }

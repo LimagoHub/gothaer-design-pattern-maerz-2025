@@ -4,6 +4,7 @@ package main;
 import composite.AbstractBankNode;
 import composite.Konto;
 import composite.KontoGruppe;
+import composite.visitor.PrintVisitor;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,6 +35,7 @@ public class Main {
 
         //root.print();
         //travers(root);
+        root.iterate(new PrintVisitor());
     }
 
     public static void travers(AbstractBankNode abstractNode) {
