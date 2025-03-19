@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="moduleMapping">
+      <map>
+        <entry key="Tag3_02BankComposite" value="Tag3_01Composite" />
+      </map>
+    </option>
+  </component>
+</project>
