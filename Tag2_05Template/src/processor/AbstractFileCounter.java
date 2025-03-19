@@ -1,6 +1,6 @@
 package processor;
 
-public abstract class AbstractFileCounter extends AbstractFileProcessor {
+public abstract class AbstractFileCounter implements CharacterHandler {
 
     private int counter;
 
