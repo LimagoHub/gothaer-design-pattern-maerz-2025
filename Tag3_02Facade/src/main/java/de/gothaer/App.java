@@ -41,7 +41,17 @@ public class App
          */
 
         try(Table table = new Table("select * from tbl_personen")) {
+            for(int i = 0; i < table.getColumnCount(); i++){
+                System.out.printf("%-30s",table.getColumnName(i));
+            }
+            System.out.println();
+            while(table.next()){
+                for(int i = 0; i < table.getColumnCount(); i++){
+                    System.out.printf("%-30s",table.getValue(i));
 
+                }
+                System.out.println();
+            }
         } catch(Exception e) {
             e.printStackTrace();
         }
